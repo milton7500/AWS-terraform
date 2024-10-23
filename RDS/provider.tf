@@ -1,14 +1,20 @@
+terraform { 
+  cloud { 
+    
+    organization = "nishu7500" 
+
+    workspaces { 
+      name = "For-Database-Backend" 
+    } 
+  } 
+}
+
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "5.54.1"
+      source = "hashicorp/aws"
+      version = "5.72.1"
     }
-  }
-  backend "s3" {
-    bucket = "rdsbucket7500"
-    key    = "test-terraform.tfstate"
-    region = "ap-south-1"
   }
 }
 
