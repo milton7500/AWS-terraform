@@ -19,6 +19,7 @@ resource "aws_db_instance" "default" {
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
   storage_type         = "gp2"
+  db_subnet_group_name = aws_db_subnet_group.test-subnet.id
   tags = {
     Name = "testserver-New"
   }
